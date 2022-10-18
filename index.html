@@ -93,7 +93,14 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        
+        <h2 id="应用层概述"><a href="#应用层概述" class="headerlink" title="应用层概述"></a>应用层概述</h2><p>​	在计算机网络中，应用层作为计算机网络体系结构的最顶层，它定义了信息交换的格式，将定义好的信息交给它下面一层的传输层去传输。它的服务对象是用户，是建立计算机网络的最终目的，同时也是发展最快的部分。</p>
+<h3 id="应用层组成：应用层是由应用层的硬件和软件组成。"><a href="#应用层组成：应用层是由应用层的硬件和软件组成。" class="headerlink" title="应用层组成：应用层是由应用层的硬件和软件组成。"></a>应用层组成：应用层是由应用层的硬件和软件组成。</h3><p>硬件主要是指边缘网络设备，例如手机、个人电脑、服务器等。软件主要是应用层网络协议，如 HTTP、DNS 等。应用层协议给提供网络通信的基础，如何提供呢？终端设备中的应用程序，通过应用层协议发送网络请求（称之为客户端），另一个终端设备接收到请求，并通过应用层协议响应请求（称之为服务端）。</p>
+<h3 id="网络应用架构"><a href="#网络应用架构" class="headerlink" title="网络应用架构"></a>网络应用架构</h3><p>​	网络通信实际上是两个终端设备上的应用程序进行通信，操作系统中一个运行的应用程序称为进程，网络通信也称为<strong>进程通信</strong>。</p>
+<p>​	开发一个应用程序，首先需要选择网络应用架构，常见的架构有CS架构（client-server architecture）和 P2P架构（Peer-to-Peer Architecture），再加上一个合适的应用层协议（如HTTP，FTP）</p>
+<h4 id="CS架构"><a href="#CS架构" class="headerlink" title="CS架构"></a>CS架构</h4><p>​	采用服务器+客户端的形式。服务器一直开启，提供某种服务，客户端之间不能直接进行通信，服务器有一个固定的 IP 地址，所有的通信都是在客户端与服务器之间进行。常见的 CS 架构应用有：Web 应用，文件传输，远程登录，和 电子邮件等。</p>
+<h4 id="P2P架构"><a href="#P2P架构" class="headerlink" title="P2P架构"></a>P2P架构</h4><p>​	任何两个主机直接可以直接进行通信，这一对主机称为 Peers。提供服务的称为服务器，请求服务的称为客户机。任何一台主机既可以作为服务端，又可以作为客户端。常见的 P2P 架构应用有：文件分享应用，对等下载加速应用迅雷，和网络电话视频应用如 Skype。</p>
+<h4 id="混合架构"><a href="#混合架构" class="headerlink" title="混合架构"></a>混合架构</h4><p>​	不同的架构采用了不同的应用层协议，不同的应用层协议使用不同的传输层协议提供的传输服务。</p>
+<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><h3 id="客户-x2F-服务器方式和对等方式"><a href="#客户-x2F-服务器方式和对等方式" class="headerlink" title="客户&#x2F;服务器方式和对等方式"></a>客户&#x2F;服务器方式和对等方式</h3><h3 id="客户-x2F-服务器方式"><a href="#客户-x2F-服务器方式" class="headerlink" title="客户&#x2F;服务器方式"></a>客户&#x2F;服务器方式</h3><h3 id="对等方式"><a href="#对等方式" class="headerlink" title="对等方式"></a>对等方式</h3><h2 id="web应用和HTTP协议"><a href="#web应用和HTTP协议" class="headerlink" title="web应用和HTTP协议"></a>web应用和HTTP协议</h2><h3 id="基本概念-1"><a href="#基本概念-1" class="headerlink" title="基本概念"></a>基本概念</h3><h3 id="HTTP报文格式"><a href="#HTTP报文格式" class="headerlink" title="HTTP报文格式"></a>HTTP报文格式</h3><h3 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h3><h3 id="Web-Cache"><a href="#Web-Cache" class="headerlink" title="Web Cache"></a>Web Cache</h3><h2 id="DNS协议"><a href="#DNS协议" class="headerlink" title="DNS协议"></a>DNS协议</h2><h2 id="CDN内容分发网络"><a href="#CDN内容分发网络" class="headerlink" title="CDN内容分发网络"></a>CDN内容分发网络</h2>
       
     </div>
     <footer class="article-footer">
