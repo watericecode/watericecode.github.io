@@ -71,6 +71,111 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-数据库复习" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/11/10/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%8D%E4%B9%A0/" class="article-date">
+  <time class="dt-published" datetime="2022-11-10T12:06:39.000Z" itemprop="datePublished">2022-11-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/11/10/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%8D%E4%B9%A0/">数据库复习</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h2><blockquote>
+<p>利用图形化界面创建，修改和删除数据库<br>利用T-SQL语句创建，修改和删除数据库</p>
+</blockquote>
+<ol>
+<li><p>利用T-SQL语句CREATE DATABASE命令创建数据库student.</p>
+</li>
+<li><p>利用T-SQL语句ALTER DATABASE命令修改数据库student,增加日志文件。</p>
+</li>
+<li><p>主要数据文件，次要数据文件，逻辑文件名，物理文件名，初始容量，最大容量，递增量</p>
+</li>
+<li><p>事物日志文件</p>
+</li>
+<li><p>删除数据库</p>
+<p>数据库在磁盘上是以文件为单位存储的，由数据文件和事务日志文件组成。一个数据库至少应该包含一个数据文件和一个事务日志文件。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> DATABASE Student </span><br><span class="line"><span class="keyword">ON</span> <span class="keyword">PRIMARY</span>(</span><br><span class="line">	name <span class="operator">=</span> &quot;XXX&quot;,</span><br><span class="line">    filename<span class="operator">=</span>&quot;D:/XXX/XXX.mdf&quot;,</span><br><span class="line">    size <span class="operator">=</span> xMB,</span><br><span class="line">    maxsize <span class="operator">=</span> xMB,</span><br><span class="line">    filegrowh <span class="operator">=</span> xMB</span><br><span class="line">	),</span><br><span class="line">	(</span><br><span class="line">    name  <span class="operator">=</span> &quot;XXXX&quot;</span><br><span class="line">     filename <span class="operator">=</span> &quot;D:/XXXX/XXXX.ndf&quot;</span><br><span class="line">     size <span class="operator">=</span> xMB,</span><br><span class="line">     maxsize <span class="operator">=</span> xMB,</span><br><span class="line">     filegrowh <span class="operator">=</span> xMB</span><br><span class="line">    )</span><br><span class="line">    </span><br><span class="line">    LOG <span class="keyword">ON</span> (</span><br><span class="line">    	name <span class="operator">=</span> &quot;XXX&quot;,</span><br><span class="line">        filename <span class="operator">=</span>&quot;D:/xxx/xxx.ldf&quot;,</span><br><span class="line">        size <span class="operator">=</span> xMB,</span><br><span class="line">        maxsize <span class="operator">=</span> xMB,</span><br><span class="line">        filegrowth <span class="operator">=</span> <span class="number">10</span><span class="operator">%</span></span><br><span class="line">    ),</span><br><span class="line">    (</span><br><span class="line">    	name <span class="operator">=</span>&quot;XXXX&quot;,</span><br><span class="line">        filename<span class="operator">=</span>&quot;D/XXXX/XXXX.ldf&quot;,</span><br><span class="line">        size <span class="operator">=</span> xMB,</span><br><span class="line">        maxsize <span class="operator">=</span> xMB,</span><br><span class="line">        filegrowth <span class="operator">=</span> <span class="number">10</span><span class="operator">%</span>    </span><br><span class="line">    ) </span><br><span class="line">    <span class="keyword">drop</span> databese student</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="创建数据表"><a href="#创建数据表" class="headerlink" title="创建数据表"></a>创建数据表</h2><blockquote>
+<p>了解SQL Server表的结构特点<br>了解SQL Server 的基本数据类型<br>掌握T-SQL语句创建和管理数据表<br>理解约束的概念。</p>
+</blockquote>
+<p> SQL Server是一个<code>关系数据库管理系统</code>（<code>RDBMS</code>），它在其基本级别上将数据存储在表中。表是充当数据容器的数据库对象，其中数据将以行和列格式逻辑组织。 每行都被视为一个实体，由保存实体属性的列所描述。 <code>表</code>是包含数据库中所有数据的数据库对象。数据在表中的组织方式与在电子表格中相似，都是按行和列的格式组织的。每行代表一条唯一的<code>记录</code>，每行代表记录中的一个<code>字段</code> </p>
+<ol>
+<li><p><strong>数据完整性</strong></p>
+<ol>
+<li><p>实体完整性：实体完整性将行定义为特定表的<code>唯一实体</code>。实体完整性通过UNIQUE(唯一)索引，UNIQUE约束或PRIMARY KEY（主键）约束，强制表的标识列或主键的完整性；</p>
+</li>
+<li><p>域完整性：域完整性指特定列的项的有效性。可以强制域完整性限制类型（通过使用数据类型）、限制格式（通过使用CHECK约束和规则）或限制可能值的范围（通过使用FOREIGN KEY约束、CHECK约束、DEFAULT定义、NOT NULL定义和规则）</p>
+</li>
+<li><p>引用（参照）完整性：输入或删除行时，引用完整性保留表之间定义的关系。强制引用完整性时，SQL Server将防止用户执行下列操作：</p>
+<ul>
+<li>在主表中没有关联行的情况下在相关表中添加或更改行；</li>
+<li>在主表中更改值（可导致相关表中出现孤立行）；</li>
+<li>在有匹配的相关行的情况下删除主表中的行；</li>
+</ul>
+</li>
+<li><p>自定义</p>
+</li>
+</ol>
+<p><em><strong>NULL &#x2F; NOT NULL 和 DEFAULT 只能定义为列级完整性约束</strong></em></p>
+<p><em><strong>主码由多个字段构成时，只能定义为“表级完整性约束</strong></em></p>
+</li>
+<li><p><strong>主键</strong></p>
+</li>
+</ol>
+<p>主键唯一标识表中的行数据，一个主键值对应一行数据。主键由一个或多个字段组成，其值具有唯一性，而且不允许取空值（NULL），一个表只能有一个主键。</p>
+<ol start="3">
+<li><p><strong>常用数据类型</strong></p>
+<ol>
+<li><p>char</p>
+</li>
+<li><p>datatime</p>
+</li>
+<li><p>varchar</p>
+</li>
+</ol>
+<p>​</p>
+</li>
+</ol>
+<p>	</p>
+<h2 id="管理表数据"><a href="#管理表数据" class="headerlink" title="管理表数据"></a>管理表数据</h2><blockquote>
+<p>掌握在对象资源管理器中对数据表进行插人、修改和删除数据的操作。<br>掌握T-SQL语句对数据表进行插人、修改和删除数据的操作。</p>
+</blockquote>
+<h2 id="简单数据查询"><a href="#简单数据查询" class="headerlink" title="简单数据查询"></a>简单数据查询</h2><blockquote>
+<p>掌握SELECT语句的基本语法<br>掌握数据汇总的方法<br>掌握SELECT语句的GROUP BY子句的作用和使用方法。<br>掌握SELECT语句的ORDER BY子句的作用和使用方法。</p>
+</blockquote>
+<h2 id="高级数据查询"><a href="#高级数据查询" class="headerlink" title="高级数据查询"></a>高级数据查询</h2><blockquote>
+<p>嵌套查询的使用。<br>连接查询的使用。</p>
+</blockquote>
+<h2 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h2><h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><h2 id="SQL程序设计"><a href="#SQL程序设计" class="headerlink" title="SQL程序设计"></a>SQL程序设计</h2><h2 id=""><a href="#" class="headerlink" title=""></a></h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/11/10/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%8D%E4%B9%A0/" data-id="clab0yo710000wwui83h861sr" data-title="数据库复习" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-计算机网络应用层" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/10/17/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E5%B1%82/" class="article-date">
@@ -93,54 +198,52 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="应用层概述"><a href="#应用层概述" class="headerlink" title="应用层概述"></a>应用层概述</h2><p>​	在计算机网络中，应用层作为计算机网络体系结构的最顶层，它定义了信息交换的格式，将定义好的信息交给它下面一层的传输层去传输。它的服务对象是用户，是建立计算机网络的最终目的，同时也是发展最快的部分。</p>
+        <h2 id="应用层概述"><a href="#应用层概述" class="headerlink" title="应用层概述"></a>应用层概述</h2><p> 在计算机网络中，应用层作为计算机网络体系结构的最顶层，它定义了信息交换的格式，将定义好的信息交给它下面一层的传输层去传输。它的服务对象是用户，是建立计算机网络的最终目的，同时也是发展最快的部分。</p>
 <h3 id="应用层协议原理"><a href="#应用层协议原理" class="headerlink" title="应用层协议原理"></a>应用层协议原理</h3><p>研发网络应用层程序的<code>核心</code>是写出能够运行在不同端系统和通过网络彼此通信的程序。我们需要编写在多台端系统上运行的软件。</p>
 <h3 id="网络应用程序体系架构"><a href="#网络应用程序体系架构" class="headerlink" title="网络应用程序体系架构"></a>网络应用程序体系架构</h3><p>开发一个应用程序，首先需要选择网络应用架构，常见的架构有CS架构（client-server architecture）和 P2P架构（Peer-to-Peer Architecture），再加上一个合适的应用层协议（如HTTP，FTP）</p>
-<h4 id="CS架构"><a href="#CS架构" class="headerlink" title="CS架构"></a>CS架构</h4><p>​	采用服务器+客户端的形式。服务器一直开启，提供某种服务，客户端之间不能直接进行通信，服务器有一个固定的 IP 地址，所有的通信都是在客户端与服务器之间进行。常见的 CS 架构应用有：Web 应用，文件传输，远程登录，和 电子邮件等。</p>
-<h4 id="P2P架构"><a href="#P2P架构" class="headerlink" title="P2P架构"></a>P2P架构</h4><p>​	任何两个主机直接可以直接进行通信，这一对主机称为 Peers。提供服务的称为服务器，请求服务的称为客户机。任何一台主机既可以作为服务端，又可以作为客户端。常见的 P2P 架构应用有：文件分享应用，对等下载加速应用迅雷，和网络电话视频应用如 Skype。</p>
-<h4 id="混合架构"><a href="#混合架构" class="headerlink" title="混合架构"></a>混合架构</h4><p>​	不同的架构采用了不同的应用层协议，不同的应用层协议使用不同的传输层协议提供的传输服务。</p>
-<h3 id="进程通信"><a href="#进程通信" class="headerlink" title="进程通信"></a>进程通信</h3><p>​	网络通信是两台计算机上的两个进程之间的通信。比如，浏览器进程和新浪服务器上的某个Web服务进程在通信，而QQ进程是和腾讯的某个服务器上的某个进程在通信。操作系统中一个运行的应用程序称为进程，网络通信也称为<strong>进程通信</strong>。</p>
-<p>​	网络编程对所有开发语言都是一样的，Python也不例外。用Python进行网络编程，就是在Python程序本身这个进程内，连接别的服务器进程的通信端口进行通信。			</p>
+<h4 id="CS架构"><a href="#CS架构" class="headerlink" title="CS架构"></a>CS架构</h4><p> 采用服务器+客户端的形式。服务器一直开启，提供某种服务，客户端之间不能直接进行通信，服务器有一个固定的 IP 地址，所有的通信都是在客户端与服务器之间进行。常见的 CS 架构应用有：Web 应用，文件传输，远程登录，和 电子邮件等。</p>
+<h4 id="P2P架构"><a href="#P2P架构" class="headerlink" title="P2P架构"></a>P2P架构</h4><p> 任何两个主机直接可以直接进行通信，这一对主机称为 Peers。提供服务的称为服务器，请求服务的称为客户机。任何一台主机既可以作为服务端，又可以作为客户端。常见的 P2P 架构应用有：文件分享应用，对等下载加速应用迅雷，和网络电话视频应用如 Skype。</p>
+<h4 id="混合架构"><a href="#混合架构" class="headerlink" title="混合架构"></a>混合架构</h4><p> 不同的架构采用了不同的应用层协议，不同的应用层协议使用不同的传输层协议提供的传输服务。</p>
+<h3 id="进程通信"><a href="#进程通信" class="headerlink" title="进程通信"></a>进程通信</h3><p> 网络通信是两台计算机上的两个进程之间的通信。比如，浏览器进程和新浪服务器上的某个Web服务进程在通信，而QQ进程是和腾讯的某个服务器上的某个进程在通信。操作系统中一个运行的应用程序称为进程，网络通信也称为<strong>进程通信</strong>。</p>
+<p> 网络编程对所有开发语言都是一样的，Python也不例外。用Python进行网络编程，就是在Python程序本身这个进程内，连接别的服务器进程的通信端口进行通信。</p>
 <ol>
 <li><p>客户与服务端进程</p>
 </li>
-<li><p>进程与计算机网络之间的接口 </p>
+<li><p>进程与计算机网络之间的接口</p>
 <p>进程通过一个称为称为<code>套接字(Socket)</code> 的软件接口向网络发送报文和从网络接受报文。套接字也称之为应用程序编程接口（API）。</p>
 </li>
 <li><p>进程寻址</p>
-<p>​	为了表示该接受进程，需要定义主机的地址（IP）和定义在目的主机中的接受进程的标识符（端口号）。</p>
-<p>​	如果一台计算机同时接入到两个或更多的网络，比如路由器，它就会有两个或多个IP地址，所以，IP地址对应的实际上是计算机的网络接口，通常是网卡。</p>
-<p>​	端口有什么作用？在两台计算机通信时，只发IP地址是不够的，因为同一台计算机上跑着多个网络程序。一个TCP报文来了之后，到底是交给浏览器还是QQ，就需要端口号来区分。每个网络程序都向操作系统申请唯一的端口号，这样，两个进程在两台计算机之间建立网络连接就需要各自的IP地址和各自的端口号。一个进程也可能同时与多个计算机建立链接，因此它会申请很多端口。</p>
+<p>为了表示该接受进程，需要定义主机的地址（IP）和定义在目的主机中的接受进程的标识符（端口号）。</p>
+<p>如果一台计算机同时接入到两个或更多的网络，比如路由器，它就会有两个或多个IP地址，所以，IP地址对应的实际上是计算机的网络接口，通常是网卡。</p>
+<p>端口有什么作用？在两台计算机通信时，只发IP地址是不够的，因为同一台计算机上跑着多个网络程序。一个TCP报文来了之后，到底是交给浏览器还是QQ，就需要端口号来区分。每个网络程序都向操作系统申请唯一的端口号，这样，两个进程在两台计算机之间建立网络连接就需要各自的IP地址和各自的端口号。一个进程也可能同时与多个计算机建立链接，因此它会申请很多端口。</p>
 </li>
 </ol>
-<p>​	<code>一个运输层协议能够为调用它的应用程序提供什么样的服务呢？</code> 大概从4个方面。</p>
+<p><code>一个运输层协议能够为调用它的应用程序提供什么样的服务呢？</code> 大概从4个方面。</p>
 <ol>
 <li>可靠的数据传输  保证数据完整性</li>
 <li>吞吐量 ，确保最低可使用吞吐量</li>
 <li>定时 时延</li>
 <li>安全性</li>
 </ol>
-<h3 id="因特网提供的运输服务（TCP-x2F-IP）"><a href="#因特网提供的运输服务（TCP-x2F-IP）" class="headerlink" title="因特网提供的运输服务（TCP&#x2F;IP）"></a><strong>因特网提供的运输服务（TCP&#x2F;IP）</strong></h3><p>​	早期的计算机网络，都是由各厂商自己规定一套协议，IBM、Apple和Microsoft都有各自的网络协议，互不兼容，这就好比一群人有的说英语，有的说中文，有的说德语，说同一种语言的人可以交流，不同的语言之间就不行了。</p>
-<p>​	为了把全世界的所有不同类型的计算机都连接起来，就必须规定一套全球通用的协议，为了实现互联网这个目标，互联网协议簇（Internet Protocol Suite）就是通用协议标准。Internet是由inter和net两个单词组合起来的，原意就是连接“网络”的网络，有了Internet，任何私有网络，只要支持这个协议，就可以联入互联网。</p>
+<h3 id="因特网提供的运输服务（TCP-x2F-IP）"><a href="#因特网提供的运输服务（TCP-x2F-IP）" class="headerlink" title="因特网提供的运输服务（TCP&#x2F;IP）"></a><strong>因特网提供的运输服务（TCP&#x2F;IP）</strong></h3><p> 早期的计算机网络，都是由各厂商自己规定一套协议，IBM、Apple和Microsoft都有各自的网络协议，互不兼容，这就好比一群人有的说英语，有的说中文，有的说德语，说同一种语言的人可以交流，不同的语言之间就不行了。</p>
+<p> 为了把全世界的所有不同类型的计算机都连接起来，就必须规定一套全球通用的协议，为了实现互联网这个目标，互联网协议簇（Internet Protocol Suite）就是通用协议标准。Internet是由inter和net两个单词组合起来的，原意就是连接“网络”的网络，有了Internet，任何私有网络，只要支持这个协议，就可以联入互联网。</p>
 <p>因为互联网协议包含了上百种协议标准，但是最重要的两个协议是TCP和IP协议，所以，大家把互联网的协议简称TCP&#x2F;IP协议。许多常用的更高级的协议都是建立在TCP协议基础上的，比如用于浏览器的HTTP协议、发送邮件的SMTP协议等。</p>
 <ol>
-<li><p>TCP服务 </p>
+<li><p>TCP服务</p>
 <p>TCP服务模型包括面向连接服务和可靠数据传输服务。</p>
 <p>TCP协议则是建立在IP协议之上的。TCP协议负责在两台计算机之间建立可靠连接，保证数据包按顺序到达。TCP协议会通过握手建立连接，然后，对每个IP包编号，确保对方按顺序收到，如果包丢掉了，就自动重发。</p>
-</li>
-</ol>
 <ul>
 <li>什么是面向连接？一个<code>TCP连接</code>在两个进程的SOCKET之间建立了。这条连接是<code>全双工</code>的。</li>
 <li>可靠的数据传送服务。</li>
 </ul>
-<ol start="2">
+</li>
 <li><p>UDP服务</p>
 <p>UDP是无连接的，提供一种不可靠的数据传输服务。</p>
 <p>因特网不提供的服务：吞吐量和定时保证目前运输协议并没有提供。</p>
 </li>
 </ol>
-<h3 id="应用层协议"><a href="#应用层协议" class="headerlink" title="应用层协议"></a>应用层协议</h3><h3 id="网络应用"><a href="#网络应用" class="headerlink" title="网络应用"></a>网络应用</h3><h2 id="Web和HTTP"><a href="#Web和HTTP" class="headerlink" title="Web和HTTP"></a>Web和HTTP</h2><h3 id="HTTP概述"><a href="#HTTP概述" class="headerlink" title="HTTP概述"></a>HTTP概述</h3><h3 id="非持续连接和持续连接"><a href="#非持续连接和持续连接" class="headerlink" title="非持续连接和持续连接"></a>非持续连接和持续连接</h3><h3 id="HTTP报文格式"><a href="#HTTP报文格式" class="headerlink" title="HTTP报文格式"></a>HTTP报文格式</h3><h3 id="用户和服务器的交互：（cookie）"><a href="#用户和服务器的交互：（cookie）" class="headerlink" title="用户和服务器的交互：（cookie）"></a>用户和服务器的交互：（cookie）</h3><h3 id="Web缓存"><a href="#Web缓存" class="headerlink" title="Web缓存"></a>Web缓存</h3><h3 id="条件GET方法"><a href="#条件GET方法" class="headerlink" title="条件GET方法"></a>条件GET方法</h3><h2 id="文件传输协议"><a href="#文件传输协议" class="headerlink" title="文件传输协议"></a>文件传输协议</h2><h2 id="因特网中的电子邮件"><a href="#因特网中的电子邮件" class="headerlink" title="因特网中的电子邮件"></a>因特网中的电子邮件</h2><h2 id="DNS：因特网的目录服务"><a href="#DNS：因特网的目录服务" class="headerlink" title="DNS：因特网的目录服务"></a>DNS：因特网的目录服务</h2><h2 id="P2P应用"><a href="#P2P应用" class="headerlink" title="P2P应用"></a>P2P应用</h2><h2 id="TCP套接字编程"><a href="#TCP套接字编程" class="headerlink" title="TCP套接字编程"></a>TCP套接字编程</h2><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>​	</p>
-<h3 id="应用层组成：应用层是由应用层的硬件和软件组成。"><a href="#应用层组成：应用层是由应用层的硬件和软件组成。" class="headerlink" title="应用层组成：应用层是由应用层的硬件和软件组成。"></a>应用层组成：应用层是由应用层的硬件和软件组成。</h3><p>硬件主要是指边缘网络设备，例如手机、个人电脑、服务器等。软件主要是应用层网络协议，如 HTTP、DNS 等。应用层协议给提供网络通信的基础，如何提供呢？终端设备中的应用程序，通过应用层协议发送网络请求（称之为客户端），另一个终端设备接收到请求，并通过应用层协议响应请求（称之为服务端）。</p>
+<h3 id="应用层协议"><a href="#应用层协议" class="headerlink" title="应用层协议"></a>应用层协议</h3><h3 id="网络应用"><a href="#网络应用" class="headerlink" title="网络应用"></a>网络应用</h3><h2 id="Web和HTTP"><a href="#Web和HTTP" class="headerlink" title="Web和HTTP"></a>Web和HTTP</h2><h3 id="HTTP概述"><a href="#HTTP概述" class="headerlink" title="HTTP概述"></a>HTTP概述</h3><p><strong>HTTP 是一种能够获取如 HTML 这样的网络资源的</strong> <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Glossary/Protocol">protocol</a>(通讯协议)。<strong>它是在 Web 上进行数据交换的基础，是一种 client-server 协议，也就是说，请求通常是由像浏览器这样的接受方发起的。一个完整的 Web 文档通常是由不同的子文档拼接而成的，像是文本、布局描述、图片、视频、脚本等等。</strong></p>
+<h3 id="非持续连接和持续连接"><a href="#非持续连接和持续连接" class="headerlink" title="非持续连接和持续连接"></a>非持续连接和持续连接</h3><h3 id="HTTP报文格式"><a href="#HTTP报文格式" class="headerlink" title="HTTP报文格式"></a>HTTP报文格式</h3><h3 id="用户和服务器的交互：（cookie）"><a href="#用户和服务器的交互：（cookie）" class="headerlink" title="用户和服务器的交互：（cookie）"></a>用户和服务器的交互：（cookie）</h3><h3 id="Web缓存"><a href="#Web缓存" class="headerlink" title="Web缓存"></a>Web缓存</h3><h3 id="条件GET方法"><a href="#条件GET方法" class="headerlink" title="条件GET方法"></a>条件GET方法</h3><h2 id="文件传输协议"><a href="#文件传输协议" class="headerlink" title="文件传输协议"></a>文件传输协议</h2><h2 id="因特网中的电子邮件"><a href="#因特网中的电子邮件" class="headerlink" title="因特网中的电子邮件"></a>因特网中的电子邮件</h2><h2 id="DNS：因特网的目录服务"><a href="#DNS：因特网的目录服务" class="headerlink" title="DNS：因特网的目录服务"></a>DNS：因特网的目录服务</h2><h2 id="P2P应用"><a href="#P2P应用" class="headerlink" title="P2P应用"></a>P2P应用</h2><h2 id="TCP套接字编程"><a href="#TCP套接字编程" class="headerlink" title="TCP套接字编程"></a>TCP套接字编程</h2><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><h3 id="应用层组成：应用层是由应用层的硬件和软件组成"><a href="#应用层组成：应用层是由应用层的硬件和软件组成" class="headerlink" title="应用层组成：应用层是由应用层的硬件和软件组成"></a>应用层组成：应用层是由应用层的硬件和软件组成</h3><p>硬件主要是指边缘网络设备，例如手机、个人电脑、服务器等。软件主要是应用层网络协议，如 HTTP、DNS 等。应用层协议给提供网络通信的基础，如何提供呢？终端设备中的应用程序，通过应用层协议发送网络请求（称之为客户端），另一个终端设备接收到请求，并通过应用层协议响应请求（称之为服务端）。</p>
 <h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><h3 id="客户-x2F-服务器方式和对等方式"><a href="#客户-x2F-服务器方式和对等方式" class="headerlink" title="客户&#x2F;服务器方式和对等方式"></a>客户&#x2F;服务器方式和对等方式</h3><h3 id="客户-x2F-服务器方式"><a href="#客户-x2F-服务器方式" class="headerlink" title="客户&#x2F;服务器方式"></a>客户&#x2F;服务器方式</h3><h3 id="对等方式"><a href="#对等方式" class="headerlink" title="对等方式"></a>对等方式</h3><h2 id="web应用和HTTP协议"><a href="#web应用和HTTP协议" class="headerlink" title="web应用和HTTP协议"></a>web应用和HTTP协议</h2><h3 id="基本概念-1"><a href="#基本概念-1" class="headerlink" title="基本概念"></a>基本概念</h3><h3 id="HTTP报文格式-1"><a href="#HTTP报文格式-1" class="headerlink" title="HTTP报文格式"></a>HTTP报文格式</h3><h3 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h3><h3 id="Web-Cache"><a href="#Web-Cache" class="headerlink" title="Web Cache"></a>Web Cache</h3><h2 id="DNS协议"><a href="#DNS协议" class="headerlink" title="DNS协议"></a>DNS协议</h2><h2 id="CDN内容分发网络"><a href="#CDN内容分发网络" class="headerlink" title="CDN内容分发网络"></a>CDN内容分发网络</h2>
       
     </div>
@@ -264,7 +367,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li></ul>
     </div>
   </div>
 
@@ -275,6 +378,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2022/11/10/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%8D%E4%B9%A0/">数据库复习</a>
+          </li>
         
           <li>
             <a href="/2022/10/17/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E5%B1%82/">计算机网络应用层</a>
